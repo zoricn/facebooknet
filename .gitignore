@@ -1,0 +1,10 @@
+*.swp
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+config/database.yml
+vendor/bundle
+/log/
+/tmp/
+/vendor/
