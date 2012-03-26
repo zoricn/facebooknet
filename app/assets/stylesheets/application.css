@@ -39,14 +39,17 @@ a:hover {
 	margin: 0 auto;
 }
 
+#content {
+	width: 960px;
+	margin: 0 auto;
+}
 
 /* Header */
 	
 h1 {
 	/*background: url('graphics/logo.png') no-repeat top left;*/
-	width: 179px;
+	width: 900px;
 	height: 52px;
-	text-indent: -1000em;
 	float: left;
 	margin: 30px 0 0 10px;
 }

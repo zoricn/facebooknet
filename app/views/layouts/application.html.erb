@@ -4,12 +4,11 @@
 <%= render :partial => "layouts/application/head" %>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     		
    <%= render "layouts/application/header" %>
 
    <div class ='header'>
-	    <h1><%= yield(:title).nil? ? "Facebook canvas" : yield(:title)%></h1>
         <% if notice %>
 				  <p id="flash_notice" class="notice"><%= notice %></p>
 				<% end %>
@@ -19,7 +18,7 @@
 				<% end %>
    </div>
 
-    <div class = 'content'>
+    <div id = 'content'>
       
         <%= yield %>      
       
