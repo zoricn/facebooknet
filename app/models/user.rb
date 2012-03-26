@@ -19,6 +19,14 @@ class User < ActiveRecord::Base
     self.roles << Role.regular
   end
 
+  def revoke_regular
+    self.roles.delete(Role.regular)
+  end
+
+  def regular?
+    role?(:regular)
+  end
+
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     data = access_token['extra']['user_hash']
     if user = User.find_by_email(data["email"])

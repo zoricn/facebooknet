@@ -4,8 +4,8 @@ Feature: Authenticating users
   As a user
   I should be able to sign up & sign in
 
-@omniauth_test
   Scenario: Sign in thru Facebook
+    Given all roles exist
     Given I am on the homepage
-    And I follow "Login"
+    Given the user is logged in
     Then I should see "Successfully authorized from Facebook account."

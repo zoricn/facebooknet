@@ -5,7 +5,8 @@ FACEBOOK_INFO = {
   "name" => "John Doe",
   "first_name" => "John",
   "last_name" => "Doe",
-  "website" => "http://www.example.com"
+  "website" => "http://www.example.com",
+  "birthday" => "07/27/1980"
 }
 
 Before("@omniauth_test") do
@@ -33,7 +34,7 @@ def omniauth_mock_facebook
       "uid" => "12345",
       "provider" => "facebook",
       "user_info" => { "nickname" => "Johny", "name" => "John"},
-      "credentials" => { "token" => "101448083266993|e988f10d01ea27bff083648b.1-625817457|vbqk5KMmrxogpCzR9A2JFA_KEBg" },
+      "credentials" => { "token" => "AAACZBzQ8xMpwBAD5Ud2ZAxOXyWGvPZBKe8mDuKEOFcFu9DOmEYEN8KSGqUPvJ55cz5pt9wyAbfBSP7aBhZCWZCmERvfxoMMYIgjSqUTYVeAZDZD" },
       "extra" => { "user_hash" => FACEBOOK_INFO }
   }
 end

@@ -21,14 +21,14 @@ Given /^the user is logged in$/ do
   #FbService.stub!(:fb_logout_url).and_return(dashboard_path)
   @current_user = Factory(:user, :email => "john@doe.com")
   @current_user.make_regular
-  omniauth_mock_facebook_with_email(@current_user.email)
+  omniauth_mock_facebook
   visit "/users/auth/facebook"
 end
 
 Given /^I am logged in$/ do
   @current_user = Factory(:user, :email => "john@doe.com")
   @current_user.make_regular
-  omniauth_mock_facebook_with_email(@current_user.email)
+  omniauth_mock_facebook
   visit "/users/auth/facebook"
 end
 

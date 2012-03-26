@@ -1,7 +1,1223 @@
-/*
- * This is a manifest file that'll automatically include all the stylesheets available in this directory
- * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
- * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require_self
- *= require_tree .
-*/
+/* 1. Clearfix */
+
+.clearfix:after { /* ie.css, ie7.css */
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+
+/* Common */
+
+body {
+  font-family: museo-sans;
+	/*font-family: "Trebuchet MS", arial, sans-serif;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+  font-family: museo-sans;
+}
+
+p {
+  font-family: museo-sans;
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#container {
+	width: 960px;
+	margin: 0 auto;
+}
+
+
+/* Header */
+	
+h1 {
+	/*background: url('graphics/logo.png') no-repeat top left;*/
+	width: 179px;
+	height: 52px;
+	text-indent: -1000em;
+	float: left;
+	margin: 30px 0 0 10px;
+}
+	
+	h1 a:link,
+	h1 a:visited {
+		/*background: url('graphics/logo.png') no-repeat top left;*/
+		width: 179px;
+		height: 52px;
+		display: block;
+	}
+	
+	/* Header RHS*/
+	
+	.header-rhs {
+		width: 300px;
+		float: right;
+		margin: 10px 10px 0 0;
+	}
+	
+		/* Login */
+	
+		.login-box {
+			text-align: right;
+			font-family: museo-sans, sans-serif;
+			font-size: 12px;
+		}
+		
+			.login-box a:link,
+			.login-box a:hover {
+				color: #000;
+			}
+		
+		/* Save work button old style */
+		
+		.header-rhs input[type="submit"] {
+			background: #ccc;
+			border: none;
+			color: #fff;
+			width: 120px;
+			font-size: 17px;
+			-moz-border-radius: 15px;
+			border-radius: 15px;
+			cursor: pointer;
+			padding: 3px 0 5px 0;
+			float: right;
+			margin-top: 20px;
+		}
+		
+		/* Save work button */
+		#header a.bt-save {
+			background: #ccc;
+			border: none;
+			color: #fff;
+			width: 83px;
+			font-size: 17px;
+			-moz-border-radius: 15px;
+			border-radius: 15px;
+			cursor: pointer;
+			padding: 3px 10px 5px 15px;
+			float: right;
+			margin: 40px -280px 0 0;
+		}
+		
+		
+/* Wrapper */		
+
+#wrapper {
+	margin: 10px 0 0 0;
+}
+	
+	/* Content */
+
+	#content {
+	
+	}
+
+		/* Content LHS */
+
+		.content-lhs {
+			width: 598px;
+			float: left;
+			background: #f3f3f3;
+			border: 1px solid #e8e8e8;
+			margin-right: 10px;
+			padding: 51px 0 10px;
+		}
+		
+			.content-lhs h2 {
+				font-size: 33px;
+				text-transform: uppercase;
+				margin: 0 0 0 10px;
+				font-weight: bold;
+				line-height: 32px;
+			}
+			
+			.content-lhs h3 {
+				font-size: 33px;
+				text-transform: uppercase;
+				margin: 0 0 6px 10px;
+				line-height: 42px;
+			}
+			
+			.content-lhs p {
+				font-size: 16px;
+				margin: 0 0 5px 10px;
+			}
+
+			.hidden_actions a.hidden_action {
+							background: #e2e2e2;
+							border: none;
+							color: #333;
+							width: 60px;
+							font-size: 17px;
+							-moz-border-radius: 15px;
+							border-radius: 15px;
+							cursor: pointer;
+							padding: 0px 0 0px 15px;
+							float: right;
+							margin-right: 10px;
+			 }
+		
+			/* Content LHS - Boxes */
+			
+			.content-lhs ul {
+				
+			}
+			
+				.content-lhs ul li {
+					float: left;
+					display: block;
+					width: 283px;
+					border: 1px dashed #e7e7e7;
+					margin: 10px 0 0 10px;
+					height: 198px;
+				}
+
+				.content-lhs ul li.filled-in li {
+					float: left;
+					display: block;
+					width: 266px;
+					border: 0px dashed #c0c0c0;
+					margin: 10px 0 0 10px;
+					height: 25px;
+				}
+				
+					.content-lhs ul li div {
+						
+					}
+	
+		/* Content RHS */
+
+		.content-rhs {
+			width: 340px;
+			float: left;
+			margin-right: 10px;
+		}
+		
+			.content-rhs h2 {
+				color: #333;
+				font-size: 20px;
+				margin: 0 0 0 10px;
+				line-height: 24px;
+			}
+		
+			/* Content RHS - Boxes */
+			
+			.content-rhs ul.test,
+			.content-rhs ul.modules {
+				margin: 0 0 13px 0;
+			}
+			
+				.content-rhs ul.test li,
+				.content-rhs ul.modules li {
+					float: left;
+					display: block;
+					width: 148px;
+					border: 1px dashed #c0c0c0;
+					margin: 0 0 10px 10px;
+					background: #f3f3f3;
+					text-align: center;
+					color: #92929e;
+					font-size: 16px;
+					line-height: 22px;
+				}
+				
+				.content-rhs ul.test li {
+					height: 25px;
+					padding: 5px 5px 0 5px;
+				}
+				
+				.content-rhs ul.modules li {
+					height: 83px;
+					padding: 10px 5px 0 5px;
+				}
+				
+					.content-rhs ul li div {
+						
+					}
+					
+						.content-rhs ul li div a:link,
+						.content-rhs ul li div a:visited {
+							color: #92929e;
+							padding: 0 0 0 0;
+						}			
+
+/* Footer */
+
+#footer {
+	
+}
+
+	#footer p {
+		width: 447px;
+		float: left;
+		color: #999;
+		font-size: 11px;
+		margin-top: 105px;
+	}
+	
+	#footer p.central-content {
+		/*background: url('graphics/footer-color-dots.png') no-repeat top center;*/
+		float: left;
+		width: 68px;
+		padding-top: 14px;
+		font-size: 10px;
+	}
+	
+
+/* sign-in screen */
+			
+#container.sign-in {
+	
+}
+
+	#container.sign-in #content {
+		width: 534px;
+		margin: 173px auto 0 auto;
+	}
+	
+		#container.sign-in h2 {
+			width: 280px;
+			float: left;
+			margin-top: 47px;
+			font-size: 24px;
+			color: #999;
+		}
+		
+		#container.sign-in .form-holder {
+			width: 254px;
+			float: left;
+			background: transparent;
+		    border: none;
+		    box-shadow: none;
+		}
+		
+		#container.sign-in .form-holder ul li {
+			margin: 0 0 7px 0;
+		}
+		
+		#container.sign-in .form-holder ul li.button-holder {
+			margin-top: 22px;
+		}
+		
+			#container.sign-in .form-holder ul li p {
+				font-size: 10px;
+				font-family: museo-sans, sans-serif;
+				color: #999;
+			}
+		
+			#container.sign-in .form-holder ul li input[type="text"] {
+				background: #fff;
+				border: 1px solid #d1d1d1;
+				height: 30px;
+				width: 227px;
+				padding: 5px 5px 5px 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				-moz-box-shadow: inset 0px 1px 3px #ccc;
+				-webkit-box-shadow: inset 1px 1px 3px #ccc;
+				box-shadow: inner 1px 1px 3px #ccc;
+				font-size: 19px;
+				color: #999;
+				margin-left: 0;
+				display: block;
+				float: none;
+				
+			}
+			
+			#container.sign-in .form-holder ul li input[type="password"] {
+				background: #fff;
+				border: 1px solid #d1d1d1;
+				height: 30px;
+				width: 227px;
+				padding: 5px 5px 5px 20px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				-moz-box-shadow: inset 0px 1px 3px #ccc;
+				-webkit-box-shadow: inset 1px 1px 3px #ccc;
+				box-shadow: inner 1px 1px 3px #ccc;
+				font-size: 19px;
+				color: #999;
+			}
+			
+			#container.sign-in .form-holder ul li input[type="submit"] {
+				color: #fff;
+				border: none;
+				font-size: 20px;
+				padding: 10px 35px 13px 35px;
+				text-align: center;
+				cursor: pointer;
+				float: right;
+				width: auto;
+				font-size: 20px;
+				cursor: pointer;
+				margin-right: 0px;
+				-moz-border-radius: 37px;
+				border-radius: 37px;
+				-moz-box-shadow: 0px 1px 3px #ccc;
+				-webkit-box-shadow: 1px 1px 3px #ccc;
+				box-shadow: 1px 1px 3px #ccc;
+				
+				/* fallback */ 
+				background-color: #6199d8;
+				background-repeat: repeat-x;
+				
+				 /* Safari 4-5, Chrome 1-9 */ 
+				background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#6199d8), to(#418add)); 
+				
+				/* Safari 5.1, Chrome 10+ */ 
+				background: -webkit-linear-gradient(top, #6199d8, #418add);
+				
+				 /* Firefox 3.6+ */
+				background: -moz-linear-gradient(top, #6199d8, #418add); 
+				
+				/* IE 10 */
+				background: -ms-linear-gradient(top, #6199d8, #418add); 
+				
+				/* Opera 11.10+ */
+				background: -o-linear-gradient(top, #6199d8, #418add);
+			}
+
+
+
+	
+
+/* add-module */
+
+.form-holder {
+	width: 330px;
+	background: #f0f0f0;
+	border: 5px solid #71bcfe;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	-moz-box-shadow: 0 0 8px #bbb;
+	-webkit-box-shadow:  0 0 8px #bbb;
+	box-shadow: 0 0 8px #bbb;
+}
+
+	.form-holder h2 {
+		font-size: 15px;
+		font-family: museo-sans, sans-serif;
+		font-weight: bold;
+		margin: 10px 0 0 10px;
+	}
+
+	.form-holder form ul {
+			padding: 0;
+	}
+	
+		.form-holder form ul li {
+			display: block;
+			margin-bottom: 10px;
+			margin-left: 7px;
+		}
+		
+		.form-holder ul li a .button-close {
+			display: block;
+			float: left;
+			margin: 6px 0 0 3px;
+		}
+
+		.form-holder ul li.fields input[type="text"] {
+			background: #e2e2e2;
+			border: 1px solid #a6a6a6;
+			height: 20px;
+			width: 227px;
+			padding: 5px 5px 5px 10px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			font-size: 17px;
+			color: #383838;
+			margin-left: 3px;
+			display: block;
+			float: left;
+		}
+
+		.form-holder ul li  {
+			position:relative;
+		}
+		
+		.form-holder ul li .input-wrapper input[type="text"],
+		.form-holder ul li .input-wrapper input[type="password"]{
+			position: relative;
+			display: inline-block;
+			zoom: 1;
+			margin: 4px 0;
+			border: 1px solid #BBB;
+			background: white;
+			line-height: 18px;
+			vertical-align: middle;
+			-moz-border-radius: 2px;
+			-webkit-border-radius: 2px;
+			border-radius: 2px;
+			height: 20px;
+			width: 227px;
+			padding: 5px 5px 5px 10px;
+			-moz-border-radius: 5px;
+			border-radius: 5px;
+			font-size: 17px;
+			color: #999;
+			display: block;
+			float: left;
+		}
+		
+
+		.form-holder ul li .input-wrapper label {
+			position: absolute;
+      		display: block;
+			height: 18px;
+			padding: 16px 16px;
+			font-size: 16px;
+			line-height: 18px;
+			color: #ccc;
+			overflow: hidden;
+			z-index: 1;
+			font-family: arial, sans-serif;
+			height: 30px;
+		    margin-left: 0;
+		    padding: 5px 5px 5px 20px;
+			position:absolute;
+			top:8px;
+			left:9px;
+		
+		}
+
+		.form-holder ul li .input-wrapper.focusField label {
+			filter: alpha(opacity=0);
+			opacity: .0;
+		}
+
+		.form-holder ul li .input-wrapper.filled label {
+			display:none;
+		}
+
+		.form-holder ul li.fields input.small {
+			width: 25px;
+		}
+		
+		.form-holder ul li.fields input.full {
+			width: 274px;
+		}
+
+		.form-holder ul li.fields input.error, 
+		.form-holder ul li textarea.error {
+			border: 1px solid #FF0000;
+		}
+		
+		.form-holder ul li.buttons-holder {
+			margin-top: 22px;
+		}
+		
+			.form-holder ul li.buttons-holder a {
+				display: block;
+				float: left;
+			}
+		
+			.form-holder ul li input[type="submit"] {
+				background: #ccc;
+				border: none;
+				color: #fff;
+				width: 80px;
+				font-size: 17px;
+				-moz-border-radius: 15px;
+				border-radius: 15px;
+				cursor: pointer;
+				padding: 3px 0 5px 0;
+				float: right;
+				margin-right: 30px;
+			}
+	
+			.form-holder ul li.buttons-holder a.cancel {
+				background: #e2e2e2;
+				border: none;
+				color: #333;
+				width: 65px;
+				font-size: 17px;
+				-moz-border-radius: 15px;
+				border-radius: 15px;
+				cursor: pointer;
+				padding: 3px 0 5px 10px;
+				float: right;
+				margin-right: 10px;
+			}
+			
+			/* bullets */
+			
+			.bulletpoints ul li input[type="text"] {
+
+			}
+
+			.content-lhs ul.bulletpoints {
+					float: left;
+					border: 0px dashed #c0c0c0;
+					margin: 5px 0 0 5px;
+					height: 168px;
+					width: 278px;
+				}
+
+			.content-lhs ul.bulletpoints li {
+					float: left;
+					border: 0px dashed #c0c0c0;
+					margin: 6px 0 0 15px;
+          height: 10px;
+				}
+			
+			/* paragraph of text */
+			
+			#modules_box label {
+				position: absolute;
+	      		display: block;
+				height: 18px;
+				padding: 16px 16px;
+				font-size: 16px;
+				line-height: 18px;
+				color: #ccc;
+				overflow: hidden;
+				z-index: 1;
+				font-family: arial, sans-serif;
+				height: 30px;
+			    margin-left: 0;
+			    padding: 5px 5px 5px 20px;
+				position:absolute;
+				top: 3px;
+				left: 0px;
+			}
+			
+			
+			.form-holder ul li textarea {
+				background: #e2e2e2;
+				border: 1px solid #a6a6a6;
+				height: 60px;
+				width: 274px;
+				padding: 5px 5px 5px 10px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				font-size: 17px;
+				color: #383838;
+				margin-left: 3px;
+				display: block;
+				float: left;
+			}
+			
+			/* unnumbered list */
+			
+			.unnumbered-list ul li p {
+				width: 46px;
+				float: left;
+				text-align: center;
+				font-size: 26px;
+			}
+			
+			/* list with stars */
+			
+			.stars-list ul li.fields input[type="text"] {
+				width: 198px;
+			}
+			
+			.stars-list ul li.fields input[type="text"].full {
+				width: 274px;
+			}
+			
+			.stars-list ul li.fields input[type="text"].small {
+				width: 25px;
+			}
+			
+			.stars-list ul li img.star {
+				float: left;
+				display: block;
+				margin: 5px 5px 0 5px;
+			}
+			
+			
+			
+/* save work */
+
+.save-work {
+	width: 630px;
+	margin: 50px auto 0 auto;
+}
+
+	.save-work .form-holder-lhs {
+		width: 234px;
+		float: left;
+		padding: 30px;
+		}
+		
+		.save-work .form-holder-lhs h2 {
+			color: #4c4c4c;
+			font-size: 20px;
+			margin-bottom: 20px;
+			font-weight: normal;
+			line-height: 28px;
+		}
+		
+		.save-work .form-holder-lhs input[type="submit"] {
+			background: #ccc;
+			border: none;
+			color: #fff;
+			width: 100px;
+			height: 40px;
+			font-size: 17px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			cursor: pointer;
+			padding: 3px 0 5px 0;
+			margin: 0 auto;
+			display: block;
+		}
+		
+		.save-work .form-holder-lhs a:link,
+		.save-work .form-holder-lhs a:visited {
+			background: #ccc;
+			border: none;
+			color: #fff;
+			width: 80px;
+			height: 25px;
+			font-size: 17px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			cursor: pointer;
+			padding: 10px 0 8px 20px;
+			margin: 0 auto;
+			display: block;
+		}
+		
+		.save-work .form-holder-lhs a:hover {
+			text-decoration: none;
+		}
+	
+	.save-work .form-holder-rhs {
+		width: 334px;
+		margin: 10px 0;
+		float: left;
+		border-left: 1px solid #ccc;
+	}
+	
+	.save-work .form-holder-rhs h2 {
+		color: #4c4c4c;
+		font-size: 18px;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	
+	.social-login {
+		width: 220px;
+		margin: 0 auto 20px auto;
+	}
+	
+		.social-login img {
+			width: 100px;
+			display: block;
+			float: left;
+			margin: 0 5px;
+		}
+	
+		.save-work .form-holder-rhs ul {
+
+		}
+	
+			.save-work .form-holder-rhs ul li {
+				width: 270px;
+				margin: 0 40px 10px 40px;
+			}
+		
+				.save-work .form-holder-rhs label {
+					font-size: 12px;
+				}
+				
+				.save-work .form-holder-rhs form a:link,
+				.save-work .form-holder-rhs form a:hover {
+					display: block;
+					float: right;
+					font-size: 12px;
+					margin-top: 4px;
+					text-decoration: underline;
+				}
+				
+				.save-work .form-holder-rhs .input-wrapper input[type="text"],
+				.save-work .form-holder-rhs .input-wrapper input[type="password"] {
+					background: #fff;
+					border: 1px solid #d1d1d1;
+					height: 30px;
+					width: 227px;
+					padding: 5px 5px 5px 20px;
+					-moz-border-radius: 20px;
+					border-radius: 20px;
+					font-size: 19px;
+					color: #666;
+					margin-left: 0;
+				}
+
+				.save-work .form-holder-rhs .input-wrapper .field_with_errors input[type="text"],
+				.save-work .form-holder-rhs .input-wrapper .field_with_errors input[type="password"] {
+					border: 1px solid #FF0000;
+				}
+	
+				.save-work .form-holder-rhs input[type="submit"] {
+					margin-right: 0;
+					background: #e2e2e2;
+					border: 1px solid #b5b5b5;
+					height: 40px;
+					-moz-border-radius: 20px;
+					border-radius: 20px;
+					color: #000;
+					width: 100px;
+				}
+				
+				
+				
+				/* thank you */
+				
+				.save-work .no-border {
+					border-left: none;
+					padding-top: 10px;
+				}
+				
+					.save-work .no-border ul li {
+						
+					}
+				
+						.save-work .no-border ul li p {
+							font-size: 11px;
+							letter-spacing: -0.02em;
+						}
+				
+							.save-work .no-border ul li a:link,
+							.save-work .no-border ul li a:visited { 
+								display: inline;
+							    float: none;
+							    font-size: 11px;
+							    margin-top: 0;
+							}
+							
+							.save-work .no-border ul li input[type="submit"] {
+								background: #ccc;
+								border: none;
+								color: #fff;
+								width: 100px;
+								height: 40px;
+								font-size: 17px;
+								-moz-border-radius: 20px;
+								border-radius: 20px;
+								cursor: pointer;
+								padding: 3px 0 5px 0;
+								margin: 0 auto;
+								display: block;
+							}
+							
+			
+		/* bitly */
+		
+		.bitly {
+			
+		}
+		
+		.bitly label {
+			float: left;
+			display: block;
+			width: 162px;
+			font-size: 13px;
+			margin: 15px 0 0 5px;
+		}
+		
+		.bitly label.second {
+			width: 100px;
+		}
+		
+			.bitly ul li input[type="text"]{
+				width: 147px;
+				font-size: 12px;
+			}
+			
+			.bitly ul li input[type="text"].small {
+				width: 70px;
+				color: #333;
+				font-size: 11px;
+			}
+			
+			.bitly ul li .ic-copy {
+				margin-left: 5px;
+			}
+			
+			/* bitly counter */
+			
+			
+			.counter ul li label {
+				width: 229px;
+			}
+			
+			.counter ul li label.second {
+				width: 60px;
+			}
+			
+			.counter ul li input[type="text"]{
+				width: 124px;
+				font-size: 12px;
+				color: #333;
+			}
+			
+			.counter ul li input[type="text"].count {
+				width: 45px;
+				color: #333;
+				font-size: 11px;
+				text-align: center;
+				padding-left: 5px;
+			}
+			
+			/* buttons */
+			
+			.bitly-holder a.button:link,
+			.bitly-holder a.button:visited {
+				background: #f9f9f9;
+				border: 1px solid #999;
+				color: #333;
+				width: 110px;
+				text-align: center;
+				height: 15px;
+				font-size: 15px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				cursor: pointer;
+				padding: 8px 10px 12px 10px;
+				display: block;
+				margin: 20px 0;
+			}
+			
+			.bitly-holder a.button:hover {
+				text-decoration: none;
+				border: 1px solid #444;
+			}
+
+
+			/* Myers-Briggs */
+			#selectable .ui-selecting { background: #FECA40; }
+			#selectable .ui-selected { background: #F39814; color: white; }
+			#selectable { list-style-type: none; margin: 0; padding: 0; }
+			
+			#myers_box, #clifton_box {
+				padding-top: 10px;
+				width: 330px;
+				background: #f0f0f0;
+				border: 5px solid #71bcfe;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				-moz-box-shadow: 0 0 8px #bbb;
+				-webkit-box-shadow:  0 0 8px #bbb;
+				box-shadow: 0 0 8px #bbb;
+			}
+			
+			#myers_box #selectable li {
+				border: 1px solid #a3a3a3;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				cursor: pointer;
+				font-size: 16px;
+				padding: 7px 5px 1px 5px;
+				margin: 5px 5px;
+				width: 60px;
+
+			}
+
+      #clifton_box #selectable li {
+				border: 1px solid #a3a3a3;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				cursor: pointer;
+				font-size: 14px;
+				padding: 0px 0px 0px 0px;
+				margin: 2px 2px;
+				width: 102px;
+			  padding: 1px; 
+        float: left; 
+				height: 25px; 
+				text-align: center;
+			}
+			
+			#myers_box #selectable li strong {
+				font-weight: normal;
+			}
+			
+			#myers_box #selectable li.ui-selected, 
+			#clifton_box #selectable li.ui-selected  {
+				background: #47a3df;
+				border-color: #53a8e0;
+			}
+			
+			#myers_box #selectable li.active {
+				border: 2px solid #53a8e0;
+				padding: 6px 4px 0 4px;
+			}
+			
+		
+			
+			#myers_box .buttons-holder, 
+      #clifton_box .buttons-holder {
+				margin: 10px 8px 10px 0;
+			}
+			
+			#myers_box .buttons-holder input[type="submit"], 
+      #clifton_box .buttons-holder input[type="submit"] {
+				background: #ccc;
+				border: none;
+				color: #fff;
+				width: 80px;
+				font-size: 17px;
+				-moz-border-radius: 15px;
+				border-radius: 15px;
+				cursor: pointer;
+				padding: 3px 0 5px 0;
+				float: right;
+			}
+			
+			#myers_box .buttons-holder a:link,
+			#myers_box .buttons-holder a:visited, 
+			#clifton_box .buttons-holder a:link,
+			#clifton_box .buttons-holder a:visited {
+				display: block;
+				border: none;
+			    border-radius: 15px 15px 15px 15px;
+			    cursor: pointer;
+				float: right;
+				height: 21px;
+			    font-size: 17px;
+				line-height: 19px;
+				padding: 5px 0 5px 0;
+			    width: 80px;
+				background: #e2e2e2;
+			    color: #333333;
+			    margin-right: 10px;
+				text-align: center;
+			}
+
+/* Dashboard Logged In */
+
+.dashboard { 
+	
+}
+	
+	.dashboard #content { 
+		margin-top: 50px;
+	}
+	
+	.create {
+		
+	}
+    
+   .create h2 {
+		color: #4c4c4c;
+      	font-size: 20px;
+      	margin-bottom: 20px;
+		margin-left: 145px;
+      	font-weight: normal;
+      	line-height: 28px;
+		padding:140px 200px 0px 240px;
+	  }
+	
+		.create ul {
+		
+		}
+	
+			.create ul li {
+				display: block;
+				float: left;
+			}
+			
+			.create ul li div {
+				background: #f3f3f3;
+				border: 1px solid #c0c0c0;;
+				width: 234px;
+				height: 334px;
+				margin-left: 10px;
+			}
+			
+			.create ul li input[type="submit"] {
+				background: #ccc;
+				border: none;
+				color: #fff;
+				width: 120px;
+				font-size: 17px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				cursor: pointer;
+				padding: 3px 0 5px 0;
+				margin: 140px auto;
+				display: block;
+				height: 40px;
+			}
+			
+			
+			.create ul li a.bt-edit:link,
+			.create ul li a.bt-edit:visited {
+				background: #999;
+				border: none;
+				color: #fff;
+				width: 70px;
+				font-size: 17px;
+				-moz-border-radius: 20px;
+				border-radius: 20px;
+				cursor: pointer;
+				padding: 7px 0 5px 0;
+				margin: 10px 0 0 10px;
+				display: block;
+				height: 20px;
+				text-align: center;
+			}
+			
+			
+		
+/* jQuery Styles */
+
+	/* create */
+	
+	.create ul li div.hovered,
+	.hovered {
+		opacity: 0.2;
+		
+	}
+
+
+
+	div#container .create ul li {
+		position: relative;
+      }
+
+	div#container ul li.filled-in {
+		position: relative;
+	}
+
+      /* HOVER STYLES */
+	.create ul li div.pop-up,
+	div#container .pop-up {
+        display: none;
+        position: absolute;
+        color: #f60;
+    	width: 234px;
+		top: 0;
+		left: 0;
+		background: none;
+		border: none;
+      }
+
+	div#container .content-lhs .pop-up {
+		width: 283px;
+	}
+	
+		div#container .content-lhs .pop-up {
+			width: 283px;
+		}
+		
+		div#container .content-lhs .pop-up a.bt-save:link,
+		div#container .content-lhs .pop-up a.bt-save:visited {
+			background: #000;
+			border: none;
+			color: #fff;
+			width: 100px;
+			font-size: 17px;
+			-moz-border-radius: 20px;
+			border-radius: 20px;
+			cursor: pointer;
+			padding: 7px 0 5px 0;
+			margin: 83px auto 0 auto;
+			display: block;
+			height: 20px;
+			text-align: center;
+		}
+
+		.close {
+			position: absolute;
+			right: 11px;
+			top: 13px;
+		}
+
+	/* add button */
+		
+		li.active {
+			position: relative;
+		}
+		
+		.active div {
+			opacity: 0.2;/* hover opacity */
+		}
+	
+	   	div.add-button { 
+ 			display: none; 
+			opacity: 1;
+		}
+		
+		.active div.add-button { 
+ 			display: block; 
+			position: absolute;
+			top: 0;
+			left: 0;
+			text-indent: -1000em;
+		}
+		
+		.active div.add-button a {
+			display: block;
+			/*background: url('graphics/add-button.png') no-repeat 50% 50%;*/
+			width: 160px;
+		}
+		
+		/* background position and size of graphics box */
+		
+		.content-lhs .active div.add-button {
+			text-indent: 0;
+			display: block; 
+			position: relative;
+		}
+		
+		.content-lhs .active div.add-button a {
+			position: relative !important;
+			display: block;
+			background: none  #ccc;
+			border-radius: 15px 15px 15px 15px;
+			color: #FFFFFF;
+			cursor: pointer;
+			font-size: 17px;
+			height: 22px;
+			padding: 10px 0 5px;
+			width: 120px;
+			margin: 66px auto 0 auto;
+			text-align: center;
+			
+			}
+		
+		
+		/* background position and size of test box */
+		.test .active div.add-button a {
+			height: 32px;
+		}
+		
+		/* background position and size of modules box */
+		.modules .active div.add-button a {
+			height: 95px;
+		}
+		
+		
+		
+	/* form active */
+		
+	body.form-active div.form-holder, 
+  body.form-active div#clifton_box, 
+  body.form-active div#myers_box {
+		opacity: 1 !important;
+		position: absolute;
+		z-index: 6000;
+	}
+		 
+		
+		
+		
+		
+

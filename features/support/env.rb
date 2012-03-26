@@ -33,7 +33,7 @@ Capybara.default_selector = :css
 ActionController::Base.allow_rescue = false
 
 Before do
-  Role.create!(:name => "admin")
+  Role.create!(:name => "regular")
 end
 
 # Remove/comment out the lines below if your app doesn't have a database.

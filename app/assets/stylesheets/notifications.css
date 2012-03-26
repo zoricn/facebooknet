@@ -1,0 +1,25 @@
+/* Success, info, notice and error/alert boxes
+-------------------------------------------------------------- */
+
+#flash_error,
+#flash_alert, 
+#flash_notice,
+#flash_success, 
+#flash_info 			{  border: 2px solid #ddd; padding: 5px 8px; }
+#notifications {margin: 37px 15px 5px 75px; width: 350px; float:left;}
+
+#flash_error, #flash_alert { background: #FCC; color: #514721; border-color: #C66; }
+#flash_notice     { background: #fff6bf; color: #514721; border-color: #ffd324; }
+#flash_success    { background: #CFC; color: #264409; border-color: #6C6; }
+#flash_info 			{ background: #d5edf8; color: #205791; border-color: #92cae4; }
+#flash_error a, #flash_alert a { color: #8a1f11; }
+#flash_notice a   { color: #514721; }
+#flash_success a  { color: #264409; }
+#flash_info a			{ color: #205791; }
+#module_errors #errorExplanation  {width:100%;}
+#ajax_error_explanation h2 {font:1em;}
+#ajax_error_explanation li {width:100%}
+.ajax_errors li {width:100% !important; height: 15px !important; border:none !important;}
+.error { color: #FF0000; }
+
+
