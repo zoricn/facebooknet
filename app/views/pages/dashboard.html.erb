@@ -7,7 +7,7 @@ Birthdays of your <%= @friends.count %> friends:
 <ul class="list">
 
 <% @friends.each do |friend| -%>
-	<li><%= friend["name"]%>'s birthday is on: <%= friend["birthday"]%></li>
+	<li><%= friend["name"]%>'s birthday is on: <%= friend["birthday"] ||= "User didn't set birthday" %></li>
 <% end -%>
 </ul>
 
