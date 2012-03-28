@@ -6,9 +6,12 @@ class PagesController < ApplicationController
   #before_filter :verify_access_token, :only => "index"
 
   def index
-    @graph = Koala::Facebook::API.new(session['access_token'])
+     @oauth = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'])
+    access_token = @oauth.parse_signed_request(params[:signed_request])["oauth_token"]
+    puts access_token
+    @graph = Koala::Facebook::API.new(access_token)
     @profile = @graph.get_object("me")
-   @current_token = session['access_token']
+   @current_token = access_token
   end
 
   def dashboard
