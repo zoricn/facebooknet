@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   #before_filter :auth_koala!, :only => "dashboard"
 
   def index
-   url = "https://www.facebook.com/dialog/oauth/?client_id=#{ENV['AST_FACEBOOK_APP_ID']}&redirect_uri=http://astrology.local:3000/dashboard/&scope=user_birthday,friends_birthday"
+      return_url = "#{request.protocol}#{full_host}#{request.fullpath}"
+   url = "https://www.facebook.com/dialog/oauth/?client_id=#{ENV['AST_FACEBOOK_APP_ID']}&redirect_uri=#{return_url}/dashboard/&scope=user_birthday,friends_birthday"
 =begin
       session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], "http://astrology.local:3000/dashboard/")
 
