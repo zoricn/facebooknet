@@ -10,7 +10,7 @@ class PagesController < ApplicationController
       @current_person = @graph.get_object("me")
       @friends = get_friends(@graph)  
     rescue Koala::Facebook::APIError
-    	log "Koala API error"
+    	logger.info "Koala API error"
     end
 
   end
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
   def get_access_token
     oauth = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET']) 
     @access_token = oauth.parse_signed_request(params[:signed_request])["oauth_token"] 
-    log "Access token = " + @access_token unless @access_token.nil?
+    logger.info "Access token = " + @access_token unless @access_token.nil?
   end
 
 end
