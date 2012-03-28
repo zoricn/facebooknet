@@ -10,8 +10,7 @@ full_host = request.host
       
       return_url = "#{request.protocol}#{full_host}#{request.fullpath}"
    url = "https://www.facebook.com/dialog/oauth/?client_id=#{ENV['AST_FACEBOOK_APP_ID']}&redirect_uri=#{return_url}/dashboard/&scope=user_birthday,friends_birthday"
-=begin
-      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], "http://astrology.local:3000/dashboard/")
+      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], "http://astronet.herokuapp.com/dashboard/")
 
       redirect_to session['oauth'].url_for_oauth_code(:permissions => 'user_birthday,friends_birthday')
 =end
