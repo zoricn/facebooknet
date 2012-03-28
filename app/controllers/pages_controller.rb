@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   before_filter :get_access_token, :only => "index"
 
   def index
-    request_authorization if @access_token.nil?
+    #request_authorization if @access_token.nil?
     begin
  	    @graph = Koala::Facebook::API.new(@access_token)
       @current_person = @graph.get_object("me")
