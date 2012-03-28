@@ -8,7 +8,7 @@ gem 'json'
 gem 'coffee-script'
 
 gem "devise", "~> 1.4.6"
-gem "oa-oauth", :require => "omniauth/oauth"
+gem "oa-oauth", "~> 0.3", :require => "omniauth/oauth"
 gem "jquery-rails", "~> 1.0.9"
 
 
@@ -42,4 +42,4 @@ group :production do
   gem "pg", :require => "pg"
 end
 
-gem "koala" #Facebook wrapper
+gem "koala", "~> 1.4.0" #Facebook wrapper
