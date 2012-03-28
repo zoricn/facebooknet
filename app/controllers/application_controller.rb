@@ -28,8 +28,9 @@ class ApplicationController < ActionController::Base
       full_host = request.host
       full_host += ':' + request.port.to_s if request.host == 'localhost'
       return_url = "#{request.protocol}#{full_host}#{request.fullpath}"
+      return_url = "http://apps.facebook.com/astrologydev/"
       logger.info 'FB Auth Return URL: ' + return_url
-      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'])
+      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], return_url)
       redirect_to session['oauth'].url_for_oauth_code(:permissions => 'user_birthday,friends_birthday')
     end
 
