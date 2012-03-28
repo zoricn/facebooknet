@@ -11,6 +11,7 @@ class PagesController < ApplicationController
       @friends = get_friends(@graph)  
     rescue Koala::Facebook::APIError
     	logger.info "Koala API error"
+      render false
     end
 
   end
