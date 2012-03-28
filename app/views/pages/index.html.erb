@@ -1,3 +1,19 @@
 <h1>Welcome to Facebook canvas application</h1>
-<%= @profile %>
+<%= @current_person %>
 <%= @current_token %>
+
+Welcome <%= @current_person["name"] %> | Your birthday is on: <%= @current_person["birthday"] %>
+<br />
+Birthdays of your <%= @friends.count %> friends:
+<br />
+
+<p>
+<ul class="list">
+
+<% @friends.each do |friend| -%>
+	<li><%= friend["name"]%>'s birthday is on: <%= friend["birthday"] ||= "User didn't set birthday" %></li>
+<% end -%>
+</ul>
+
+</p>
+
