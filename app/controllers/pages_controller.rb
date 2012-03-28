@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   before_filter :verify_access_token, :only => "index"
 
   def index
-
+   @current_token = session['access_token']
   end
 
   def dashboard
