@@ -4,6 +4,7 @@ class PagesController < ApplicationController
   before_filter :get_access_token, :only => "index"
 
   def index
+    request_authorization if @access_token.nil?
     begin
  	    @graph = Koala::Facebook::API.new(@access_token)
       @current_person = @graph.get_object("me")
@@ -31,7 +32,7 @@ class PagesController < ApplicationController
   def get_access_token
     oauth = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET']) 
     @access_token = oauth.parse_signed_request(params[:signed_request])["oauth_token"] 
-    log "Access token = " + @access_token 
+    log "Access token = " + @access_token unless @access_token.nil?
   end
 
 end
