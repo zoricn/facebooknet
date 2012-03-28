@@ -36,4 +36,41 @@ class User < ActiveRecord::Base
     end
   end
 
+  class << self
+    extend ActiveSupport::Memoizable
+
+    def config
+      @config ||= if ENV['FB_APP_ID'] && ENV['FB_APP_SECRET'] && ENV['FB_SCOPE'] && ENV['FB_CANVAS_URL']
+        {
+          :client_id     => ENV['AST_FACEBOOK_APP_ID'],
+          :client_secret => ENV['AST_FACEBOOK_APP_ID'],
+          :scope         => 'user_birthday,friends_birthday',
+          :canvas_url    => "http://astronet.herokuapp.com/"
+        }
+      else
+        YAML.load_file("#{Rails.root}/config/facebook.yml")[Rails.env].symbolize_keys
+      end
+    rescue Errno::ENOENT => e
+      raise StandardError.new("config/facebook.yml could not be loaded.")
+    end
+
+    def app
+      FbGraph::Application.new config[:client_id], :secret => config[:client_secret]
+    end
+
+    def auth(redirect_uri = nil)
+      FbGraph::Auth.new config[:client_id], config[:client_secret], :redirect_uri => redirect_uri
+    end
+
+    def identify(fb_user)
+      _fb_user_ = find_or_initialize_by_identifier(fb_user.identifier.try(:to_s))
+      _fb_user_.access_token = fb_user.access_token.access_token
+      _fb_user_.first_name = fb_user.first_name
+      _fb_user_.last_name = fb_user.last_name
+      _fb_user_.email = fb_user.email
+      _fb_user_.save!
+      _fb_user_
+    end
+  end
+
 end

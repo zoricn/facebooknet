@@ -24,13 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def request_authorization
-      # FB doesn't like port numbers in the return URL in canvas apps so only use for local dev
-      full_host = request.host
-      full_host += ':' + request.port.to_s if request.host == 'localhost'
-      return_url = "#{request.protocol}#{full_host}#{request.fullpath}"
-      return_url = "http://apps.facebook.com/astrologydev/"
-      logger.info 'FB Auth Return URL: ' + return_url
-      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], return_url)
+      session['oauth'] = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET'], ENV['AST_FACEBOOK_CANVAS'])
       redirect_to session['oauth'].url_for_oauth_code(:permissions => 'user_birthday,friends_birthday')
     end
 
