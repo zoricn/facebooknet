@@ -5,6 +5,9 @@ class PagesController < ApplicationController
   #before_filter :auth_koala!, :only => "dashboard"
 
   def index
+full_host = request.host
+      full_host += ':' + request.port.to_s if request.host == 'localhost'
+      
       return_url = "#{request.protocol}#{full_host}#{request.fullpath}"
    url = "https://www.facebook.com/dialog/oauth/?client_id=#{ENV['AST_FACEBOOK_APP_ID']}&redirect_uri=#{return_url}/dashboard/&scope=user_birthday,friends_birthday"
 =begin
