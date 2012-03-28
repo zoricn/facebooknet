@@ -3,9 +3,11 @@ require 'json'
 class PagesController < ApplicationController
   #before_filter :authenticate_user!, :except => "index"
   #before_filter :auth_koala!, :only => "dashboard"
-  before_filter :verify_access_token, :only => "index"
+  #before_filter :verify_access_token, :only => "index"
 
   def index
+    @graph = Koala::Facebook::API.new(session['access_token'])
+    @profile = @graph.get_object("me")
    @current_token = session['access_token']
   end
 
