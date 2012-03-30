@@ -25,7 +25,7 @@ class PagesController < ApplicationController
   end
 
   def get_friends(graph)
-    friends = graph.get_connections("me", "friends", "fields" => ["birthday", "name"])
+    friends = graph.get_connections("me", "friends", :fields => ["birthday", "name"])
     friends.sort! { |a,b| a["name"].downcase <=> b["name"].downcase }.first 20
   end
 
