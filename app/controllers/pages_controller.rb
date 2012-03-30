@@ -6,9 +6,9 @@ class PagesController < ApplicationController
   def index
     request_authorization if @access_token.nil?
     begin
- 	    @graph = Koala::Facebook::API.new(@access_token)
+      @graph = KoalaService.graph_from(@access_token)
       @current_person = @graph.get_object("me")
-      @friends = get_friends(@graph)  
+      @friends = KoalaService.get_twenty_friends(@graph)  
     rescue Koala::Facebook::APIError
     	logger.info "Koala API error"
     end
