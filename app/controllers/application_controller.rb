@@ -6,21 +6,13 @@ class ApplicationController < ActionController::Base
     return true
   end
 
-  def authenticate_user!
-    redirect_to root_path, :alert => "You must sign in first" if current_user.nil?
-  end
-
   def after_sign_in_path_for(resource)
     stored_location_for(resource) ||
       if resource.is_a?(User)
-        dashboard_path
+        root_path
       else
         super
       end
-  end
-
-  def current_token
-    session['access_token']
   end
 
   def request_authorization

@@ -61,6 +61,11 @@ Spork.each_run do
   Dir["#{Rails.root}/app/models/**/*.rb"].each do |model|
     load model
   end
+
+  Dir["#{Rails.root}/lib/**/*.rb"].each do |lib|
+    load lib
+  end
+
 	# reload all the controllers
   Dir["#{Rails.root}/app/controllers/**/*.rb"].each do |controller|
     load controller

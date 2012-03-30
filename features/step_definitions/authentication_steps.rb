@@ -18,11 +18,7 @@ end
 
 
 Given /^the user is logged in$/ do
-  #FbService.stub!(:fb_logout_url).and_return(dashboard_path)
-  @current_user = Factory(:user, :email => "john@doe.com")
-  @current_user.make_regular
-  omniauth_mock_facebook
-  visit "/users/auth/facebook"
+   #User
 end
 
 Given /^I am logged in$/ do

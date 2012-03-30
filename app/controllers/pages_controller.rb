@@ -1,5 +1,4 @@
 require 'koala'
-require 'json'
 class PagesController < ApplicationController
   before_filter :get_access_token, :only => "index"
 
@@ -7,27 +6,14 @@ class PagesController < ApplicationController
     request_authorization if @access_token.nil?
     begin
       @graph = KoalaService.graph_from(@access_token)
-      @current_person = @graph.get_object("me")
+      @current_person = KoalaService.get_me(@graph)
       @friends = KoalaService.get_twenty_friends(@graph)  
     rescue Koala::Facebook::APIError
     	logger.info "Koala API error"
     end
-
-  end
-
-  def dashboard
   end
 
   private
-
-  def auth_koala!
-    @graph = Koala::Facebook::API.new(@access_token)
-  end
-
-  def get_friends(graph)
-    friends = graph.get_connections("me", "friends", :fields => "birthday,name")
-    friends.sort! { |a,b| a["name"].downcase <=> b["name"].downcase }.first 20
-  end
 
   def get_access_token
     oauth = Koala::Facebook::OAuth.new(ENV['AST_FACEBOOK_APP_ID'], ENV['AST_FACEBOOK_APP_SECRET']) 

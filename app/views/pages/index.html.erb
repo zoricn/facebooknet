@@ -8,7 +8,7 @@ Birthdays of your <%= @friends.count %> friends:
 
 <% @friends.each do |friend| -%>
 	<li><%= friend["name"]%>'s birthday is on: <%= friend["birthday"] ||= "This info not available" %></li>
-<% end -%>
+<% end unless @friends.empty? -%>
 </ul>
 
 </p>
