@@ -1,6 +1,5 @@
 Welcome <%= @current_person["name"] %> | Your birthday is on: <%= @current_person["birthday"] %>
 <br />
-<%= params[:code] %>
 Birthdays of your <%= @friends.count %> friends:
 <br />
 
@@ -8,7 +7,7 @@ Birthdays of your <%= @friends.count %> friends:
 <ul class="list">
 
 <% @friends.each do |friend| -%>
-  <li><%= friend %></li>
+	<li><%= friend["name"]%>'s birthday is on: <%= friend["birthday"] ||= "This info not available" %></li>
 <% end -%>
 </ul>
 
